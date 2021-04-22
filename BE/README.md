@@ -10,7 +10,7 @@
     "title": "main",
     "dishes": [
         {
-            "hash": "HBDEF",
+            "id": 1,
             "name": "[미노리키친] 규동 250g",
             "description": "일본인의 소울푸드! 한국인도 좋아하는 소고기덮밥",
             "top_image": "http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/4cce011a4a352c22cd399a60271b4921.jpg",
@@ -18,7 +18,7 @@
             "badges": ["이벤트특가"]
         },
         {
-            "hash": "H82A2",
+            "id": 2,
             "name": "[빅마마의밥친구] 아삭 고소한 연근고기조림 250g",
             "description": "아이반찬과 다이어트 반찬으로 일석이조",
             "top_image": "https://user-images.githubusercontent.com/74045466/115366281-25095380-a200-11eb-9a9d-58e3d593b157.png",
@@ -36,7 +36,7 @@
     "title": "soup",
     "dishes": [
         {
-            "hash": "H72C3",
+            "id": 3,
             "name": "[수하동] 특곰탕 850g" ,
             "description": ,
             "top_image": "http://public.codesquad.kr/jk/storeapp/data/d1fccf125f0a78113d0e06cb888f2e74.jpg",
@@ -44,7 +44,7 @@
             "badges": ["이벤트특가", "런칭특가"]
         },
         {
-            "hash": "HA6EE",
+            "id": 4,
             "name": "[빅마마의밥친구] 된장찌개 900g",
             "description": "항아리에서 숙성시킨 집된장으로만 맛을내 짜지 않은 된장찌개",
             "top_image": "http://public.codesquad.kr/jk/storeapp/data/d1fccf125f0a78113d0e06cb888f2e74.jpg",
@@ -62,7 +62,7 @@
     "title": "side",
     "dishes": [
         {
-            "hash": "H1939",
+            "id": 5,
             "name": "[동네부엌] 쇠고기야채장조림 200g",
             "description": "부드러운 고기부터 밥비벼먹기 딱좋은 국물까지", 
             "top_image": "http://public.codesquad.kr/jk/storeapp/data/e5646e5fc09a01a9243979b229e0572b.jpg",
@@ -74,13 +74,13 @@
 ```
 
 ## 상세페이지
-- banchan-code/main/{hash}
-- banchan-code/soup/{hash}
-- banchan-code/side/{hash}
+- banchan-code/main/{id}
+- banchan-code/soup/{id}
+- banchan-code/side/{id}
 - GET
 ```json=
 {
-    "hash": "HBDEF",
+    "id": 1,
     "name": "[미노리키친] 규동 250g",
     "top_image": "http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/4cce011a4a352c22cd399a60271b4921.jpg",
     "description": "일본인의 소울푸드! 한국인도 좋아하는 소고기덮밥",

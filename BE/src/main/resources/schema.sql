@@ -22,35 +22,38 @@ CREATE TABLE DISH
     STOCK         bigint(20),
     POINT         int,
     DELIVERY_INFO varchar(100),
-    CATEGORY      bigint(20) references CATEGORY (id)
-
+    CATEGORY      bigint(20) references CATEGORY (id),
+    TOP_IMAGE     varchar(100)
 );
 
-CREATE TABLE PRICES
+CREATE TABLE PRICE
 (
     ID    bigint(20) auto_increment primary key,
-    PRICE int,
-    DISH  bigint(20) references DISH (id)
-);
-
-CREATE TABLE BADGES
-(
-    ID    bigint(20) auto_increment primary key,
-    BADGE varchar(100),
+    VALUE int,
     DISH  bigint(20) references DISH (id),
     DISH_KEY int
 );
 
-CREATE TABLE THUMB_IMAGES
+CREATE TABLE BADGE
 (
-    ID          bigint(20) auto_increment primary key,
-    THUMB_IMAGE varchar(100),
-    DISH        bigint(20) references DISH (id)
+    ID    bigint(20) auto_increment primary key,
+    VALUE varchar(100),
+    DISH  bigint(20) references DISH (id),
+    DISH_KEY int
 );
 
-CREATE TABLE DETAIL_IMAGES
+CREATE TABLE THUMB_IMAGE
 (
     ID          bigint(20) auto_increment primary key,
-    DETAIL_IMAGE varchar(100),
-    DISH        bigint(20) references DISH (id)
+    VALUE varchar(100),
+    DISH        bigint(20) references DISH (id),
+    DISH_KEY int
+);
+
+CREATE TABLE DETAIL_IMAGE
+(
+    ID          bigint(20) auto_increment primary key,
+    VALUE varchar(100),
+    DISH        bigint(20) references DISH (id),
+    DISH_KEY int
 );

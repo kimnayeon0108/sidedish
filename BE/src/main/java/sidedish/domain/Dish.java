@@ -1,6 +1,7 @@
 package sidedish.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.MappedCollection;
 
 import java.util.Collections;
 import java.util.List;
@@ -13,23 +14,33 @@ public class Dish {
     private String name;
     private String topImage;
     private String description;
-    private List<Integer> prices;
-    private List<String> badges;
+
+    @MappedCollection(idColumn = "DISH", keyColumn = "DISH_KEY")
+    private List<Price> prices;
+
+    @MappedCollection(idColumn = "DISH", keyColumn = "DISH_KEY")
+    private List<Badge> badges;
+
     private Long stock;
     private Integer point;
     private String deliveryInfo;
-    private List<String> thumbImages;
-    private List<String> detailImages;
 
-    public Dish(String name, String topImage, String description, List<Integer> prices, List<String> badges,
-                Long stock, String deliveryInfo, List<String> thumbImages, List<String> detailImages) {
+    @MappedCollection(idColumn = "DISH", keyColumn = "DISH_KEY")
+    private List<ThumbImage> thumbImages;
+
+    @MappedCollection(idColumn = "DISH", keyColumn = "DISH_KEY")
+    private List<DetailImage> detailImages;
+
+    public Dish(Long id, String name, String topImage, String description, List<Price> prices, List<Badge> badges,
+                Long stock, Integer point, String deliveryInfo, List<ThumbImage> thumbImages, List<DetailImage> detailImages) {
+        this.id = id;
         this.name = name;
         this.topImage = topImage;
         this.description = description;
         this.prices = prices;
         this.badges = badges;
         this.stock = stock;
-        this.point = createPoint(prices);
+        this.point = point;
         this.deliveryInfo = deliveryInfo;
         this.thumbImages = thumbImages;
         this.detailImages = detailImages;
@@ -55,11 +66,11 @@ public class Dish {
         return description;
     }
 
-    public List<Integer> getPrices() {
+    public List<Price> getPrices() {
         return prices;
     }
 
-    public List<String> getBadges() {
+    public List<Badge> getBadges() {
         return badges;
     }
 
@@ -75,11 +86,11 @@ public class Dish {
         return deliveryInfo;
     }
 
-    public List<String> getThumbImages() {
+    public List<ThumbImage> getThumbImages() {
         return thumbImages;
     }
 
-    public List<String> getDetailImages() {
+    public List<DetailImage> getDetailImages() {
         return detailImages;
     }
 }

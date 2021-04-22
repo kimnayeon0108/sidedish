@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sidedish.domain.Category;
-import sidedish.domain.CategoryType;
 import sidedish.repository.CategoryRepository;
 
 @RestController

@@ -13,17 +13,21 @@ public class Category {
     private String categoryType;
     private Set<Dish> dishes;
 
-    public Category(String categoryType) {
+    public Category(Long id, String categoryType) {
+        this.id = id;
         this.categoryType = categoryType;
         this.dishes = new HashSet<>();
     }
 
-    public String getTitle() {
+    public Long getId() {
+        return id;
+    }
+
+    public String getCategoryType() {
         return categoryType;
     }
 
     public Set<Dish> getDishes() {
         return dishes;
     }
-
 }
