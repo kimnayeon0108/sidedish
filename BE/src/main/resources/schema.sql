@@ -57,3 +57,21 @@ CREATE TABLE DETAIL_IMAGE
     DISH        bigint(20) references DISH (id),
     DISH_KEY int
 );
+
+insert into category (category_type) values ("main");
+insert into category (category_type) values ("soup");
+insert into category (category_type) values ("sidedish");
+
+insert into price (value, dish, dish_key) values (5000, 1, 1);
+insert into price (value, dish, dish_key) values (4500, 1, 1);
+
+insert into badge (value, dish, dish_key) values ("이벤트특가", 1, 1);
+
+insert into THUMB_IMAGE (value, dish, dish_key) values ("썸네일1", 1, 1);
+insert into THUMB_IMAGE (value, dish, dish_key) values ("썸네일2", 1, 1);
+
+insert into DETAIL_IMAGE (value, dish, dish_key) values ("상세설명1", 1, 1);
+insert into DETAIL_IMAGE (value, dish, dish_key) values ("상세설명2", 1, 1);
+
+insert into dish (name, description, stock, point, delivery_info, category, top_image)
+values ("규동", "맛있는 규동", 10, 10, "월,화,수", 1, "top이미지");
